@@ -8,12 +8,12 @@ function loadMessages() {
       const messageElement = document.createElement('div');
       messageElement.classList.add('message');
   
-      // Tạo phần nội dung tin nhắn
+
       const contentElement = document.createElement('div');
       contentElement.classList.add('content');
       contentElement.textContent = message.text;
       
-      // Tạo phần hiển thị ngày gửi
+
       const dateElement = document.createElement('div');
       dateElement.classList.add('date');
       dateElement.textContent = message.date;
@@ -44,6 +44,6 @@ function loadMessages() {
     }
   }
   
-  // Tải các tin nhắn khi trang được tải
+
   window.onload = loadMessages;
   
