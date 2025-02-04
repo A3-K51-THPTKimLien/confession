@@ -1,4 +1,4 @@
-// Lấy các tin nhắn từ localStorage khi trang được tải
+
 function loadMessages() {
     const messages = JSON.parse(localStorage.getItem('messages')) || [];
     const messagesContainer = document.getElementById('messages');
@@ -25,7 +25,7 @@ function loadMessages() {
     });
   }
   
-  // Gửi tin nhắn và lưu vào localStorage
+
   function sendMessage() {
     const messageInput = document.getElementById('messageInput');
     const message = messageInput.value.trim();
@@ -33,16 +33,14 @@ function loadMessages() {
     if (message) {
       const messages = JSON.parse(localStorage.getItem('messages')) || [];
       
-      // Lấy ngày giờ hiện tại
       const now = new Date();
-      const date = now.toLocaleString(); // Định dạng ngày giờ
+      const date = now.toLocaleString();
       
-      // Thêm tin nhắn mới vào danh sách
       messages.push({ text: message, date: date });
       
       localStorage.setItem('messages', JSON.stringify(messages));
-      messageInput.value = '';  // Xóa ô nhập sau khi gửi tin nhắn
-      loadMessages();  // Tải lại các tin nhắn
+      messageInput.value = '';
+      loadMessages();
     }
   }
   
